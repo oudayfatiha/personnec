@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include<stdbool.h>
+
+struct adresse{
+   char ville[100];
+   char rue[100];
+   int codepostal;
+  };
+struct personne{
+   char nom[100];
+   int age;
+struct adresse b;
+  };
+//1. FONCréer
+
+struct  personne A[100];
+int b=0;
+
+  void creer(){
+
+    printf("2-donnez le nom:\n");
+    scanf("%s",A[b++].nom);
+    printf("3-donnez l'age:\n");
+    scanf("%d",&A[b++].age);
+    printf("4-donnez la ville:\n");
+    scanf("%s",A[b++].b.ville);
+    printf("5-donnez le rue:\n");
+    scanf("%s",A[b++].b.rue);
+    printf("6-donnez le codepostal:\n");
+    scanf("%d",&A[b++].b.codepostal);
+
+  }
+
+/////2.Lire et afficher
+
+  void afficherP(struct personne PR){
+    printf("%s",PR.nom);
+    printf("%d",PR.age);
+    printf("%s",PR.b.ville);
+    printf("%s",PR.b.rue);
+    printf("%d",PR.b.codepostal);
+  }
+
+
+int main() {
+    int choix;
+    bool kml =true;
+
+/////("Menu :
+   while (kml) {
+
+    printf("1- creer une personne\n");
+    printf("2- Modifier une personne\n");
+    printf("3- Lire et afficher les informations des personnes\n");
+    printf("4- Supprimer une personne\n");
+    printf("Veuillez choisir une option (1-4) : ");
+
+
+    scanf("%d", &choix);
+
+    //  switch
+    switch (choix) {
+        case 1:
+            printf("Vous avez choisi d'ajouter une personne.\n");
+            creer();
+            break;
+        case 2:
+            printf("Vous avez choisi de modifier une personne.\n");
+
+            break;
+        case 3:
+            printf("Vous avez choisi de lire et afficher les informations des personnes.\n");
+
+            break;
+        case 4:
+            printf("Vous avez choisi de supprimer une personne.\n");
+
+            break;
+        default:
+            printf("Choix invalide. Veuillez entrer un nombre entre 1 et 4.\n");
+
+            break;
+    }
+
+    }
+
+    return 0;
+}
